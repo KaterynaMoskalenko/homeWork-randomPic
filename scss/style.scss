@@ -1,0 +1,107 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background: #a8d7e1; /* Цвет блока */
+font-family: Arial;
+text-decoration: none;
+font-size: 30px;  
+}
+
+$color: rgb(33, 181, 218);
+
+.button {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius:5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 5rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+//+++++++++++++
+.wrapTitle {
+    background: #a2dcdf;
+    padding: 50px 20px;
+    text-align: center;
+  } 
+  .wrapTitle h1 {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    color: #777;
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1;
+    padding: 10px 0;
+    margin: 0;
+    display: inline-block;
+  }
+  .wrapTitle h1:before {
+    content: ""; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 200%;
+    border-radius: 50%/30%;
+    border: 6px solid #5C2610;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+
+/* optional reset for presentation */
+.header {
+    text-align: center;
+    padding: 5px;
+}
+.containerBtn {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.containerPic {
+    // background-size: contain;
+    background-size: 30% 50%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%; /* ширина секции */
+    height: 400px; /* высота секции */
+}
